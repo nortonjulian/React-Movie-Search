@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 export default function Form(props) {
     const [formData, setFormData] = useState({
-        searchterm: ""
+        searchTerm: ""
     })
 
     const handleChange = (event)=> {
@@ -11,8 +11,8 @@ export default function Form(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.moviesearch(formData.searchterm)
-        setFormData({ searchterm: "" })
+        props.moviesearch(formData.searchTerm)
+        setFormData({ searchTerm: "" })
     }
 
     return (
@@ -20,9 +20,9 @@ export default function Form(props) {
             <form onSubmit={handleSubmit}>
                 <input
                   type="text"
-                  name="searchterm"
+                  name="searchTerm"
                   onChange={handleChange}
-                  value={formData.searchterm}
+                  value={formData.searchTerm}
                 />
                 <input type="submit" value="submit" />
             </form>
